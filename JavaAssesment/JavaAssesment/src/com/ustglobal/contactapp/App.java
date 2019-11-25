@@ -60,7 +60,8 @@ public class App {
 					int termChoice = sc.nextInt();
 					if (termChoice == 0) {
 						System.out.println("Call Disconnected");
-						System.exit(0);
+						 System.out.println("enter any key to go back main menu");
+						 System.in.read();
 					} else {
 						System.out.println("Invalid keys");
 					}
@@ -71,12 +72,12 @@ public class App {
 					String massage = daomsg.message();
 					System.out.println(massage);
 					System.out.println("Message Sent");
-					System.exit(0);
+					 System.out.println("enter any key to go back main menu");
+					 System.in.read();
 					break;
 
-				case 3: //Main Menu 
-					System.exit(0);
-					break;
+				case 3:  System.out.println("enter any key to go back main menu");
+					System.in.read();
 
 				}
 
