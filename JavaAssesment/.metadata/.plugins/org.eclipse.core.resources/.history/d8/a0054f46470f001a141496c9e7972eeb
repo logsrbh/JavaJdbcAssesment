@@ -1,0 +1,5 @@
+package com.ustglobal.contact.dao;
+
+public class ContactDAOImpl {
+
+}

@@ -1,0 +1,5 @@
+package com.ustglobal.contact.util;
+
+public class ContactManager {
+
+}

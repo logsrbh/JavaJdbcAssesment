@@ -1,0 +1,22 @@
+package com.ustglobal.contactapp;
+
+import java.util.Scanner;
+
+public class App {
+	
+	public static void main(String[] args) {
+		
+		System.out.println("---------------------------------");
+		System.out.println("Press 1 to Show all Contacts");
+		System.out.println("Press 2 to Search for Contact");
+		System.out.println("Press 3 to Operate On Contact");
+		System.out.println("---------------------------------");
+
+		Scanner sc = new Scanner(System.in);
+		int ch = sc.nextInt();
+		
+		
+		
+	}
+
+}

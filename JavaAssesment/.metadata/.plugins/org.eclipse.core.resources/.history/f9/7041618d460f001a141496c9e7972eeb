@@ -1,0 +1,14 @@
+package com.ustglobal.dao;
+
+import java.util.List;
+
+import com.ustglobal.contact.dto.ContactBean;
+
+public interface ContactDAO {
+	
+	public List<ContactBean> getAllContact();
+
+	public ContactBean searchContact(int id);
+	
+
+}

@@ -1,0 +1,14 @@
+package com.ustglobal.contact.dto;
+
+public class ContactBean {
+	
+	
+	private String name;
+	
+	private int num;
+	
+	private String groupName;
+	
+	
+
+}

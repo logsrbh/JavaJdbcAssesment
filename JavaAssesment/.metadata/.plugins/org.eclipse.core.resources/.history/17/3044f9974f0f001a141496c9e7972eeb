@@ -1,0 +1,98 @@
+package com.ustglobal.contactapp;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.ustglobal.contact.dao.ContactDAO;
+import com.ustglobal.contact.dto.ContactBean;
+import com.ustglobal.contact.util.ContactManager;
+
+public class App {
+
+	public static void main(String[] args) {
+
+		System.out.println("---------------------------------");
+		System.out.println("Press 1 to Show all Contacts");
+		System.out.println("Press 2 to Search for Contact");
+		System.out.println("Press 3 to Operate On Contact");
+		System.out.println("---------------------------------");
+
+		Scanner sc = new Scanner(System.in);
+		int ch = sc.nextInt();
+
+		switch (ch) {
+
+		case 1:
+			ContactDAO daol = ContactManager.getContactDAO();
+			List<ContactBean> result = daol.getAllContact();
+
+			for (ContactBean bean : result) {
+				System.out.println("Name : " + bean.getName());
+			}
+
+			break;
+
+		case 2:
+			ContactDAO dao2 = ContactManager.getContactDAO();
+			System.out.println("Enter the Employee Name ...");
+			String name = sc.next();
+			ContactBean bean = dao2.searchContact(name);
+			if (bean != null) {
+				System.out.println("Name : " + bean.getName());
+				System.out.println("Number : " + bean.getNum());
+				System.out.println("Group Name : " + bean.getGroupName());
+
+				System.out.println("---------------------------------");
+				System.out.println("Press 1 to Call");
+				System.out.println("Press 2 to Message");
+				System.out.println("Press 3 to Main Menu");
+				System.out.println("---------------------------------");
+
+				int choice = sc.nextInt();
+
+				switch (choice) {
+
+				case 1:
+					ContactDAO daocall = ContactManager.getContactDAO();
+					String msg = daocall.call();
+					System.out.println(msg);
+					System.out.println("Press 0 to Terminate");
+					int termChoice = sc.nextInt();
+					if (termChoice == 0) {
+						System.out.println("Call Disconnected");
+						System.exit(0);
+					} else {
+						System.out.println("Invalid keys");
+					}
+					break;
+
+				case 2:
+					ContactDAO daomsg = ContactManager.getContactDAO();
+					String massage = daomsg.message();
+					System.out.println(massage);
+					System.out.println("Message Sent");
+					System.exit(0);
+					break;
+
+				case 3: // Go Back to main menu
+					break;
+
+				}
+
+			} else {
+				System.err.println("No Data Found");
+			}
+
+			break;
+
+		case 3:
+			break;
+
+		case 4:
+			break;
+
+		}
+
+	}
+
+}

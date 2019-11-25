@@ -1,0 +1,10 @@
+package com.ustglobal.dao;
+
+public interface ContactDAO {
+	
+	public List<ContactBean> getAllContact();
+
+	public EmployeeBean searchEmployeeData(int id);
+	
+
+}

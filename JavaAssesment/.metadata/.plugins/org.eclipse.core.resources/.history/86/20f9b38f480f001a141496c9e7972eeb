@@ -1,0 +1,21 @@
+package com.ustglobal.contact.dao;
+
+import java.util.List;
+
+import com.ustglobal.contact.dto.ContactBean;
+
+public class ContactDAOImpl implements ContactDAO {
+
+	@Override
+	public List<ContactBean> getAllContact() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ContactBean searchContact(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
